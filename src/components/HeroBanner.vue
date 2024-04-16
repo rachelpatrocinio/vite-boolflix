@@ -5,8 +5,7 @@ import axios from 'axios';
 export default {
     data(){
         return{
-            store,
-            array: []
+            store
         }
     },
     mounted(){
@@ -14,11 +13,12 @@ export default {
             .get('https://api.themoviedb.org/3/search/movie',{
                 params: {
                     api_key: store.API_KEY,
-                    query: 'gene'
+                    query: 'r',
+                    page: Math.random()*10
                 }
             })
             .then((res)=>{
-                this.array = res.data.results
+                store.randomMovies = res.data.results
                 console.log(res.data.results)
             })
     }
@@ -28,7 +28,7 @@ export default {
 
 <template>
     <div class="d-flex hero">
-        <img v-for="(item,i) in array" :key="i" :src="`${store.imgUrlBase}/${item.poster_path}`" alt="">
+        <img v-for="(randomMovie,i) in store.randomMovies" :key="i" :src="`${store.imgUrlBase}/${randomMovie.poster_path}`" alt="">
     </div>
 </template>
 

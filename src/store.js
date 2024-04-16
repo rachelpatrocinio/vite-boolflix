@@ -8,5 +8,6 @@ export const store = reactive ({
     searchedMovies: [],
     searchedTv: [],
     searchedMoviesVotes: [],
-    imgUrlBase: 'https://image.tmdb.org/t/p/w342'
+    imgUrlBase: 'https://image.tmdb.org/t/p/w342',
+    randomMovies: []
 })
