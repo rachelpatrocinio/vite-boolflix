@@ -2,3 +2,7 @@
     max-width: 960px;
     margin: 0 auto;
 }
+
+.col-3{
+    width: calc(3 * 100% / 12);
+}
