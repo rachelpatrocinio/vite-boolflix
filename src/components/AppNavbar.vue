@@ -9,7 +9,12 @@ import axios from 'axios';
         },
         methods:{
             search(){
-                console.log(store.searchBarValue)
+                // console.log(store.searchBarValue)
+                this.searchMovie()
+                this.searchTv()
+                store.searchBarValue = '';
+            },
+            searchMovie(){
                 axios
                     .get('https://api.themoviedb.org/3/search/movie',{
                         params:{
@@ -22,7 +27,20 @@ import axios from 'axios';
                         store.searchedMovies = res.data.results;
                         // console.log(store.searchedMovies)
                     })
-                store.searchBarValue = ''
+            },
+            searchTv(){
+                axios
+                    .get('https://api.themoviedb.org/3/search/tv',{
+                        params:{
+                            api_key: store.API_KEY,
+                            query: store.searchBarValue
+                        }
+                    })
+                    .then((res) =>{
+                        console.log(res.data.results)
+                        store.searchedTv = res.data.results
+                    })
+                store.searchBarValue = '';
             }
         }
     }
