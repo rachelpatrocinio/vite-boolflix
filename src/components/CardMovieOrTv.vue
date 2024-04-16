@@ -24,8 +24,8 @@ export default {
         <img class="flag" v-else-if="movie.original_language === 'es'" src="../../public/spain.png">
         <img class="flag" v-else-if="movie.original_language === 'de'" src="../../public/deutsch.png">
         <p v-else> {{ movie.original_language }}</p>
-        <p>{{ Math.floor(movie.vote_average) }}</p>
-        <CardStars/>
+        <!-- <p>{{ Math.floor(movie.vote_average) }}</p> -->
+        <CardStars :vote="Math.floor(movie.vote_average)"/>
     </li>
     <li class="card col-3" v-for="serietv in store.searchedTv">
         <img :src="`${store.imgUrlBase}/${serietv.poster_path}`" :alt="serietv.original_name">
@@ -36,8 +36,8 @@ export default {
         <img class="flag" v-else-if="serietv.original_language === 'es'" src="../../public/spain.png">
         <img class="flag" v-else-if="serietv.original_language === 'de'" src="../../public/deutsch.png">
         <p v-else> {{ serietv.original_language }}</p>
-        <p>{{ Math.floor(serietv.vote_average) }}</p>
-        <CardStars/>
+        <!-- <p>{{ Math.floor(serietv.vote_average) }}</p> -->
+        <CardStars :vote="Math.floor(serietv.vote_average)"/>
     </li>
 </template>
 
