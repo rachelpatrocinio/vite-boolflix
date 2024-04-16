@@ -6,5 +6,6 @@ export const store = reactive ({
     API_TV: 'https://api.themoviedb.org/3/search/tv',
     searchBarValue: '',
     searchedMovies: [],
-    searchedTv: []
+    searchedTv: [],
+    imgUrlBase: 'https://image.tmdb.org/t/p/w342'
 })
