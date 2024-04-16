@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <h3 class="logo">BOOLFLIX</h3>
+    <h2 class="logo">BOOLFLIX</h2>
 </template>
 
 <style lang="scss" scoped>
