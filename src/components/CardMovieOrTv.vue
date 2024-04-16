@@ -54,22 +54,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.overlay{
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 10px;
-    padding: 5px;
-    background-color: rgba($color: black, $alpha: 0.9);
-    color:white;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .card{
     padding: 10px;
@@ -77,24 +61,24 @@ export default {
 
     .overlay{
         opacity: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 10px;
+        padding: 5px;
+        background-color: rgba($color: black, $alpha: 0.9);
+        color:white;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &:hover .overlay{
     opacity: 1;
     transition: 0.7s;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 10px;
-    padding: 5px;
-    background-color: rgba($color: black, $alpha: 0.9);
-    color:white;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     }
 
     img:not(img.flag){

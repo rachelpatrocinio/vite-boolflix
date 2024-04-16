@@ -25,5 +25,10 @@
 
 ul li{
     padding: 10px;
+
+    &:hover{
+        color:red;
+        cursor: pointer;
+    }
 }
 </style>
