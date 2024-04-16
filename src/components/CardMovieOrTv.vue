@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <li class="card col-3" v-for="movie in store.searchedMovies">
+    <li class="card col-3" v-for="movie in store.searchedMovies" :key="movie.id">
         <img :src="`${store.imgUrlBase}/${movie.poster_path}`" :alt="movie.title">
         <div class="overlay">
             <div>
@@ -33,7 +33,7 @@ export default {
             </div>
         </div>
     </li>
-    <li class="card col-3" v-for="serietv in store.searchedTv">
+    <li class="card col-3" v-for="serietv in store.searchedTv" :key="serietv.id">
         <img :src="`${store.imgUrlBase}/${serietv.poster_path}`" :alt="serietv.original_name">
         <div class="overlay">
             <div>
