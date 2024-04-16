@@ -23,7 +23,6 @@ export default {
 
 
 <style lang="scss" scoped>
-
 .main-header{
     background-color: black;
     color: white;
@@ -31,6 +30,6 @@ export default {
 
     .container{
     width: 100%;
-}
+    }
 }
 </style>
