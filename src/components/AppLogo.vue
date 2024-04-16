@@ -5,11 +5,25 @@
 </script>
 
 <template>
-    <h2 class="logo">BOOLFLIX</h2>
+<div class="d-flex align-items-center">
+    <img class="logo" src="../../public/netflix.jpeg" alt="">
+    <ul class="d-flex">
+        <li>Home</li>
+        <li>Serie Tv</li>
+        <li>Film</li>
+        <li>Originali</li>
+        <li>Aggiunti di recente</li>
+        <li>La mia lista</li>
+    </ul>
+</div>
 </template>
 
 <style lang="scss" scoped>
 .logo{
-    color: red;
+    width: 130px;
+}
+
+ul li{
+    padding: 10px;
 }
 </style>

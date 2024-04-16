@@ -47,10 +47,23 @@ import axios from 'axios';
 
 <template>
     <div>
+        <button @click="search" class="ms-10 p-5" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         <input type="text" class="p-5" v-model="store.searchBarValue" for="search" @keyup.enter="search">
-        <button @click="search" class="ms-10 p-5" id="search">SEARCH</button>
     </div>
 </template>
 
 <style lang="scss" scoped>
+button{
+    border: none;
+    background-color: #0F0F0F;
+    color: white;
+    font-size: 20px;
+}
+
+input[type="text"]{
+    background-color: #0F0F0F;
+    border: none;
+    outline-color: red;
+    color: white;
+}
 </style>

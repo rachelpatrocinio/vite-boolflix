@@ -11,9 +11,9 @@ export default {
 </script>
 
 <template>
-    <header class="main-header d-flex align-items-center">
+    <header class="main-header">
         <div class="container">
-            <div class="row d-flex justify-content-between">
+            <div class="row d-flex justify-content-between align-items-center">
                 <AppLogo/>
                 <AppNavbar/>
             </div>
@@ -24,7 +24,6 @@ export default {
 
 <style lang="scss" scoped>
 .main-header{
-    background-color: black;
     color: white;
     height: 80px;
 
