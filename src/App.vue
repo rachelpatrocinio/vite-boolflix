@@ -1,7 +1,11 @@
 <script>
 import { store } from './store.js'
+import AppHeader from './components/AppHeader.vue'
 
-export default{
+export default {
+    components:{
+        AppHeader
+    },
     data(){
         return{
             store
@@ -11,7 +15,9 @@ export default{
 </script>
 
 <template>
+    <AppHeader/>
 </template>
 
-<style>
+<style lang="scss">
+@use './assets/scss/general';
 </style>
