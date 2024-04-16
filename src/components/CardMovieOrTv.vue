@@ -29,7 +29,7 @@ export default {
                 <img class="flag" v-else-if="movie.original_language === 'es'" src="../../public/spain.png">
                 <img class="flag" v-else-if="movie.original_language === 'de'" src="../../public/deutsch.png">
                 <p v-else> {{ movie.original_language }}</p>
-                <CardStars :vote="Math.floor(movie.vote_average)"/>
+                <CardStars :vote="Math.floor(movie.vote_average/2)"/>
             </div>
         </div>
     </li>
@@ -47,7 +47,7 @@ export default {
                 <img class="flag" v-else-if="serietv.original_language === 'es'" src="../../public/spain.png">
                 <img class="flag" v-else-if="serietv.original_language === 'de'" src="../../public/deutsch.png">
                 <p v-else> {{ serietv.original_language }}</p>
-                <CardStars :vote="Math.floor(serietv.vote_average)"/>
+                <CardStars :vote="Math.floor(serietv.vote_average/2)"/>
             </div>
         </div>
     </li>
