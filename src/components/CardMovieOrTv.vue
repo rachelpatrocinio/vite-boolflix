@@ -93,6 +93,12 @@ export default {
     justify-content: space-between;
     }
 
+    img:not(img.flag){
+        height: 380px;
+        object-fit: cover;
+        object-position: center;
+    }
+
     img.flag{
         width: 30px;
     }
