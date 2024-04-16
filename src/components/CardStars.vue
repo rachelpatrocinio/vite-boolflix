@@ -24,7 +24,7 @@ export default {
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </div>
-    <div v-if="Math.floor(vote/2) === 1">
+    <div v-else-if="Math.floor(vote/2) === 1">
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
@@ -32,28 +32,28 @@ export default {
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </div>
-    <div v-if="Math.floor(vote/2) === 2">
+    <div v-else-if="Math.floor(vote/2) === 2">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </div>
-    <div v-if="Math.floor(vote/2) === 3">
+    <div v-else-if="Math.floor(vote/2) === 3">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </div>
-    <div v-if="Math.floor(vote/2) === 4">
+    <div v-else-if="Math.floor(vote/2) === 4">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </div>
-    <div v-if="Math.floor(vote/2) === 5">
+    <div v-else-if="Math.floor(vote/2) === 5">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
