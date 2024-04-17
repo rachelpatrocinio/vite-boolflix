@@ -20,18 +20,7 @@ export default {
     methods:{
         flag(item){
             console.log(item.original_language);
-            if(item.original_language === 'it'){
-                this.imgPath = '../../public/italy.png'
-            } 
-            else if(item.original_language === 'en'){
-                this.imgPath = '../../public/usa.png'
-            }
-            else if(item.original_language === 'es'){
-                this.imgPath = '../../public/spain.png'
-            }
-            else if(item.original_language === 'de'){
-                this.imgPath = '../../public/deutsch.png'
-            }
+            this.imgPath = `../../public/${item.original_language}.png`
         }
     },
     mounted(){
