@@ -13,8 +13,29 @@ export default {
     },
     data(){
         return{
-            store
+            store,
+            imgPath: ''
         }
+    },
+    methods:{
+        flag(item){
+            console.log(item.original_language);
+            if(item.original_language === 'it'){
+                this.imgPath = '../../public/italy.png'
+            } 
+            else if(item.original_language === 'en'){
+                this.imgPath = '../../public/usa.png'
+            }
+            else if(item.original_language === 'es'){
+                this.imgPath = '../../public/spain.png'
+            }
+            else if(item.original_language === 'de'){
+                this.imgPath = '../../public/deutsch.png'
+            }
+        }
+    },
+    mounted(){
+        this.flag(this.item)
     }
 }
 </script>
@@ -29,11 +50,7 @@ export default {
                 <p>{{ item.overview }}</p>
             </div>
             <div>
-                <img class="flag" v-if="item.original_language === 'it'" src="../../public/italy.png">
-                <img class="flag" v-else-if="item.original_language === 'en'" src="../../public/usa.png">
-                <img class="flag" v-else-if="item.original_language === 'es'" src="../../public/spain.png">
-                <img class="flag" v-else-if="item.original_language === 'de'" src="../../public/deutsch.png">
-                <p v-else> {{ item.original_language }}</p>
+                <img class="flag" :src="imgPath">
                 <CardStars :vote="Math.floor(item.vote_average/2)"/>
             </div>
         </div>
