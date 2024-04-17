@@ -37,7 +37,21 @@ export default {
                 })
                 .then((response)=>{
                     el.actor = response.data.cast.slice(0,5)
-                    console.log(store.searchedMovies)
+                    // console.log(store.searchedMovies)
+                })
+        })
+
+        store.searchedTv.forEach(el=>{
+            axios
+                .get(`https://api.themoviedb.org/3/tv/${el.id}/credits`,{
+                    params:{
+                        api_key: store.API_KEY,
+                        append_to_response: 'credits'
+                    }
+                })
+                .then((response)=>{
+                    el.actor = response.data.cast.slice(0,5)
+                    console.log(store.searchedTv)
                 })
         })
     }
