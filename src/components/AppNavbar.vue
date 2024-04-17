@@ -37,7 +37,8 @@ import axios from 'axios';
                         }
                     })
                     .then((res) =>{
-                        store.searchedTv = res.data.results
+                        store.searchedTv = res.data.results;
+                        // console.log(store.searchedTv)
                     })
                 store.searchBarValue = '';
             }

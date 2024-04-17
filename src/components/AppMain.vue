@@ -21,7 +21,8 @@ export default {
         <HeroBanner/>
         <div class="container">
             <ul v-if="store.searchedMovies.length !== 0 || store.searchedTv.length !== 0" class="d-flex flex-wrap">
-                <CardMovieOrTv/>
+                <CardMovieOrTv v-for="movie in store.searchedMovies" :key="movie.id" :item="movie"/>
+                <CardMovieOrTv v-for="serietv in store.searchedTv" :key="serietv.id" :item="serietv"/>
             </ul>
         </div>
     </main>

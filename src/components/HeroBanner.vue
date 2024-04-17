@@ -19,7 +19,7 @@ export default {
             })
             .then((res)=>{
                 store.randomMovies = res.data.results
-                console.log(res.data.results)
+                // console.log(res.data.results)
             })
     }
 }

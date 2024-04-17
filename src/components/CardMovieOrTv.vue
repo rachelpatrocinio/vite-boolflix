@@ -6,6 +6,11 @@ export default {
     components:{
         CardStars
     },
+    props:{
+        item:{
+            type: Object
+        }
+    },
     data(){
         return{
             store
@@ -15,39 +20,21 @@ export default {
 </script>
 
 <template>
-    <li class="card col-3" v-for="movie in store.searchedMovies" :key="movie.id">
-        <img :src="`${store.imgUrlBase}/${movie.poster_path}`" :alt="movie.title">
+    <li class="card col-3">
+        <img :src="`${store.imgUrlBase}/${item.poster_path}`" :alt="item.title">
         <div class="overlay">
             <div>
-                <h3>{{ movie.title }}</h3>
-                <h6 class="mb-10">{{ movie.original_title }}</h6>
-                <p>{{ movie.overview }}</p>
+                <h3>{{ item.title }}</h3>
+                <h6 class="mb-10">{{ item.original_title }}</h6>
+                <p>{{ item.overview }}</p>
             </div>
             <div>
-                <img class="flag" v-if="movie.original_language === 'it'" src="../../public/italy.png">
-                <img class="flag" v-else-if="movie.original_language === 'en'" src="../../public/usa.png">
-                <img class="flag" v-else-if="movie.original_language === 'es'" src="../../public/spain.png">
-                <img class="flag" v-else-if="movie.original_language === 'de'" src="../../public/deutsch.png">
-                <p v-else> {{ movie.original_language }}</p>
-                <CardStars :vote="Math.floor(movie.vote_average/2)"/>
-            </div>
-        </div>
-    </li>
-    <li class="card col-3" v-for="serietv in store.searchedTv" :key="serietv.id">
-        <img :src="`${store.imgUrlBase}/${serietv.poster_path}`" :alt="serietv.original_name">
-        <div class="overlay">
-            <div>
-                <h4>{{ serietv.original_name }}</h4>
-                <h6>{{ serietv.first_air_date }}</h6>
-                <p>{{ serietv.overview }}</p>
-            </div>
-            <div>
-                <img class="flag" v-if="serietv.original_language === 'it'" src="../../public/italy.png">
-                <img class="flag" v-else-if="serietv.original_language === 'en'" src="../../public/usa.png">
-                <img class="flag" v-else-if="serietv.original_language === 'es'" src="../../public/spain.png">
-                <img class="flag" v-else-if="serietv.original_language === 'de'" src="../../public/deutsch.png">
-                <p v-else> {{ serietv.original_language }}</p>
-                <CardStars :vote="Math.floor(serietv.vote_average/2)"/>
+                <img class="flag" v-if="item.original_language === 'it'" src="../../public/italy.png">
+                <img class="flag" v-else-if="item.original_language === 'en'" src="../../public/usa.png">
+                <img class="flag" v-else-if="item.original_language === 'es'" src="../../public/spain.png">
+                <img class="flag" v-else-if="item.original_language === 'de'" src="../../public/deutsch.png">
+                <p v-else> {{ item.original_language }}</p>
+                <CardStars :vote="Math.floor(item.vote_average/2)"/>
             </div>
         </div>
     </li>
