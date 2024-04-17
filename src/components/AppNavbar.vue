@@ -47,8 +47,8 @@ import axios from 'axios';
 
 <template>
     <div>
-        <button @click="search" class="ms-10 p-5" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <input type="text" class="p-5" v-model="store.searchBarValue" for="search" @keyup.enter="search">
+        <button @click="search" class="ms-10 p-5" id="search"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></button>
+        <input type="text" class="p-5" v-model="store.searchBarValue" for="search" @keyup.enter="search" placeholder="Search...">
     </div>
 </template>
 

@@ -17,8 +17,8 @@ export default {
 
 <template>
      <div>
-        <i v-for="star in vote" class="fa-solid fa-star"></i>
-        <i v-for="star in store.totalStars-vote" class="fa-regular fa-star"></i>
+        <font-awesome-icon :icon="['fas', 'star']" v-for="star in vote" />
+        <font-awesome-icon :icon="['far', 'star']"  v-for="star in store.totalStars-vote" />
     </div>
 </template>
 
