@@ -40,7 +40,6 @@ import axios from 'axios';
                         store.searchedTv = res.data.results;
                         // console.log(store.searchedTv)
                     })
-                store.searchBarValue = '';
             }
         }
     }

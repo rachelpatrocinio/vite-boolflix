@@ -9,5 +9,6 @@ export const store = reactive ({
     searchedTv: [],
     imgUrlBase: 'https://image.tmdb.org/t/p/w342',
     randomMovies: [],
-    totalStars: 5
+    totalStars: 5,
+    actors: []
 })
