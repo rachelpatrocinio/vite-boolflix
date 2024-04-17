@@ -18,7 +18,7 @@ export default {
 <template>
      <div>
         <i v-for="star in vote" class="fa-solid fa-star"></i>
-        <i v-for="star in 5-vote" class="fa-regular fa-star"></i>
+        <i v-for="star in store.totalStars-vote" class="fa-regular fa-star"></i>
     </div>
 </template>
 
