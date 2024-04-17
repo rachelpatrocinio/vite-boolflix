@@ -39,7 +39,7 @@ export default {
                 <p>{{ item.overview }}</p>
             </div>
             <div>
-                <img class="flag" :src="imgPath">
+                <img  class="flag" :src="imgPath" :alt="item.original_language">
                 <CardStars :vote="Math.floor(item.vote_average/2)"/>
             </div>
         </div>
@@ -51,6 +51,10 @@ export default {
 .card{
     padding: 10px;
     position: relative;
+
+    img{
+        color: white;
+    }
 
     .overlay{
         opacity: 0;
