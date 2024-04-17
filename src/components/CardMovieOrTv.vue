@@ -22,24 +22,24 @@ export default {
         flag(item){
             // console.log(item.original_language);
             this.imgPath = `../../public/${item.original_language}.png`
-        },
-        searchActors(item){
+        }
+    },
+    mounted(){
+        this.flag(this.item)
+
+        store.searchedMovies.forEach(el=>{
             axios
-                .get(`https://api.themoviedb.org/3/movie/${item.id}/credits`,{
+                .get(`https://api.themoviedb.org/3/movie/${el.id}/credits`,{
                     params:{
                         api_key: store.API_KEY,
                         append_to_response: 'credits'
                     }
                 })
                 .then((response)=>{
-                    store.actors = (response.data.cast)
-                    console.log(store.actors)
+                    el.actor = response.data.cast.slice(0,5)
+                    console.log(store.searchedMovies)
                 })
-        }
-    },
-    mounted(){
-        this.flag(this.item)
-        this.searchActors(this.item)
+        })
     }
 }
 </script>
@@ -57,7 +57,7 @@ export default {
                 <img  class="flag" :src="imgPath" :alt="item.original_language">
                 <CardStars :vote="Math.floor(item.vote_average/2)"/>
                 <p class="mt-20"> MAIN CAST:</p>
-                <p class="mt-10" v-for="(actor,i) in store.actors" :key="i">{{ actor.name }}</p>
+                <p v-for="singleActor in item.actor">{{ singleActor.name }}</p>
             </div>
         </div>
     </li>
