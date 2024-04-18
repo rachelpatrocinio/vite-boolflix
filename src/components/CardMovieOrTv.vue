@@ -38,7 +38,7 @@ export default {
                 .then((response)=>{
                     el.actor = response.data.cast.slice(0,5)
                     // console.log(store.searchedMovies)
-                })
+                })  
         })
 
         store.searchedTv.forEach(el=>{
@@ -60,7 +60,7 @@ export default {
 
 <template>
     <li class="card col-3">
-        <img :src="`${store.imgUrlBase}/${item.poster_path}`" :alt="item.title">
+        <img :src="item.poster_path !== null ? `${store.imgUrlBase}/${item.poster_path}`:'/image-not-found.png'" >
         <div class="overlay">
             <div>
                 <h3>{{ item.title }}</h3>
