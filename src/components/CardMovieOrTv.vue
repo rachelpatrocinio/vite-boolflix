@@ -2,10 +2,12 @@
 import axios  from 'axios';
 import { store } from '../store.js';
 import CardStars from './CardStars.vue';
+import CardGenres from './CardGenres.vue';
 
 export default {
     components:{
-        CardStars
+        CardStars,
+        CardGenres
     },
     props:{
         item:{
@@ -51,7 +53,7 @@ export default {
                 })
                 .then((response)=>{
                     el.actor = response.data.cast.slice(0,5)
-                    console.log(store.searchedTv)
+                    // console.log(store.searchedTv)
                 })
         })
     }
@@ -74,6 +76,8 @@ export default {
                 <CardStars :vote="Math.floor(item.vote_average/2)"/>
                 <p class="mt-20"> MAIN CAST:</p>
                 <p v-for="singleActor in item.actor">{{ singleActor.name }}</p>
+                <p class="mt-20"> GENRES:</p>
+                <CardGenres :showGenres="item.genre_ids"/>
             </div>
         </div>
     </li>

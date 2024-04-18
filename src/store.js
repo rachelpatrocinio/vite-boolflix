@@ -10,5 +10,5 @@ export const store = reactive ({
     imgUrlBase: 'https://image.tmdb.org/t/p/w342',
     randomMovies: [],
     totalStars: 5,
-    actors: []
+    genres: []
 })

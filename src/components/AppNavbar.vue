@@ -12,6 +12,7 @@ import axios from 'axios';
                 // console.log(store.searchBarValue)
                 this.searchMovie()
                 this.searchTv()
+                this.searchGenres()
                 store.searchBarValue = '';
             },
             searchMovie(){
@@ -39,6 +40,18 @@ import axios from 'axios';
                     .then((res) =>{
                         store.searchedTv = res.data.results;
                         // console.log(store.searchedTv)
+                    })
+            },
+            searchGenres(){
+                axios
+                    .get('https://api.themoviedb.org/3/genre/movie/list',{
+                        params:{
+                            api_key: store.API_KEY
+                        }
+                    })
+                    .then((response)=>{
+                        store.genres = response
+                        console.log(store.genres)
                     })
             }
         }
