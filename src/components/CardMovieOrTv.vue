@@ -64,7 +64,9 @@ export default {
         <div class="overlay">
             <div>
                 <h3>{{ item.title }}</h3>
+                <h3>{{ item.name }}</h3>
                 <h6 class="mb-10">{{ item.original_title }}</h6>
+                <h6 class="mb-10">{{ item.first_arir_date }}</h6>
                 <p>{{ item.overview }}</p>
             </div>
             <div>

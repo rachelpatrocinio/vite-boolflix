@@ -17,12 +17,15 @@ export default {
 
 <template>
      <div>
-        <font-awesome-icon :icon="['fas', 'star']" v-for="star in vote" />
-        <font-awesome-icon :icon="['far', 'star']"  v-for="star in store.totalStars-vote" />
+        <font-awesome-icon class="star-icon" :icon="['fas', 'star']" v-for="star in vote" />
+        <font-awesome-icon class="star-icon" :icon="['far', 'star']" v-for="star in store.totalStars-vote" />
     </div>
 </template>
 
 
 
 <style lang="scss" scoped>
+.star-icon{
+    color: gold;
+}
 </style>
