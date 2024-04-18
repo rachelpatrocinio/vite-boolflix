@@ -29,7 +29,7 @@ export default {
     mounted(){
         this.flag(this.item)
 
-        store.searchedMovies.forEach(el=>{
+        this.store.searchedMovies.forEach(el=>{
             axios
                 .get(`https://api.themoviedb.org/3/movie/${el.id}/credits`,{
                     params:{
@@ -43,7 +43,7 @@ export default {
                 })  
         })
 
-        store.searchedTv.forEach(el=>{
+        this.store.searchedTv.forEach(el=>{
             axios
                 .get(`https://api.themoviedb.org/3/tv/${el.id}/credits`,{
                     params:{

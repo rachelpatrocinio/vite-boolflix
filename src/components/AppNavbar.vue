@@ -13,7 +13,7 @@ import axios from 'axios';
                 this.searchMovie()
                 this.searchTv()
                 this.searchGenres()
-                store.searchBarValue = '';
+                this.store.searchBarValue = '';
             },
             searchMovie(){
                 axios
@@ -25,7 +25,7 @@ import axios from 'axios';
                     })
                     .then((res) =>{
                         // console.log(res)
-                        store.searchedMovies = res.data.results;
+                        this.store.searchedMovies = res.data.results;
                         // console.log(store.searchedMovies)
                     })
             },
@@ -38,7 +38,7 @@ import axios from 'axios';
                         }
                     })
                     .then((res) =>{
-                        store.searchedTv = res.data.results;
+                        this.store.searchedTv = res.data.results;
                         // console.log(store.searchedTv)
                     })
             },
@@ -50,7 +50,7 @@ import axios from 'axios';
                         }
                     })
                     .then((response)=>{
-                        store.genres = response
+                        this.store.genres = response
                         console.log(store.genres)
                     })
             }
