@@ -1,5 +1,4 @@
 <script>
-import axios  from 'axios';
 import { store } from '../store.js';
 import CardStars from './CardStars.vue';
 import CardGenres from './CardGenres.vue';

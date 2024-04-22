@@ -51,7 +51,7 @@ import axios from 'axios';
                     })
                     .then((response)=>{
                         this.store.genres = response
-                        console.log(store.genres)
+                        // console.log(store.genres)
                     })
             }
         }
