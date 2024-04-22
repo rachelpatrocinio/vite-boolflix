@@ -28,34 +28,6 @@ export default {
     },
     mounted(){
         this.flag(this.item)
-
-        this.store.searchedMovies.forEach(el=>{
-            axios
-                .get(`https://api.themoviedb.org/3/movie/${el.id}/credits`,{
-                    params:{
-                        api_key: store.API_KEY,
-                        append_to_response: 'credits'
-                    }
-                })
-                .then((response)=>{
-                    el.actor = response.data.cast.slice(0,5)
-                    // console.log(store.searchedMovies)
-                })  
-        })
-
-        this.store.searchedTv.forEach(el=>{
-            axios
-                .get(`https://api.themoviedb.org/3/tv/${el.id}/credits`,{
-                    params:{
-                        api_key: store.API_KEY,
-                        append_to_response: 'credits'
-                    }
-                })
-                .then((response)=>{
-                    el.actor = response.data.cast.slice(0,5)
-                    // console.log(store.searchedTv)
-                })
-        })
     }
 }
 </script>
