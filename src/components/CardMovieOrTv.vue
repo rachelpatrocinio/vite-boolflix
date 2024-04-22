@@ -65,10 +65,10 @@ export default {
         <img :src="item.poster_path !== null ? `${store.imgUrlBase}/${item.poster_path}`:'/image-not-found.png'" >
         <div class="overlay">
             <div>
-                <h3>{{ item.title }}</h3>
-                <h3>{{ item.name }}</h3>
-                <h6 class="mb-10">{{ item.original_title }}</h6>
-                <h6 class="mb-10">{{ item.first_arir_date }}</h6>
+                <h3 v-if="item.title">{{ item.title }}</h3>
+                <h3 v-else>{{ item.name }}</h3>
+                <h6 v-if="item.original_title" class="mb-10">{{ item.original_title }}</h6>
+                <h6 v-else class="mb-10">{{ item.original_name }}</h6>
                 <p>{{ item.overview }}</p>
             </div>
             <div>
